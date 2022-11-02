@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import { Filter } from 'components/FilterContact/FilterContact';
 import { ContactList } from 'components/ContactList/ContactList';
 import { SubTitle, ErrorMessage } from 'components/AppStyle';
-import { getContact, getFilter, getState } from 'redux/selector';
+import { getContact, getFilter, getState } from 'redux/selectors';
 import { filterContacts } from 'redux/filterSlice';
 import { fetchContacts, removeContact } from 'redux/Contacts/contactsOperation';
 import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   const contacts = useSelector(getContact);
   const { isLoading, error } = useSelector(getState);
   const filter = useSelector(getFilter);
@@ -59,3 +59,5 @@ export const ContactsPage = () => {
     </>
   );
 };
+
+export default ContactsPage;

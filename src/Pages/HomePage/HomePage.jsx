@@ -1,12 +1,12 @@
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { Title } from '../../components/AppStyle';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContact } from '../../redux/selector';
+import { getContact } from '../../redux/selectors';
 import { addContact } from '../../redux/Contacts/contactsOperation';
 import { dublicate } from 'components/Notifigation/Notification';
 import { ToastContainer } from 'react-toastify';
 
-export const HomePage = () => {
+const HomePage = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContact);
 
@@ -31,3 +31,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;
