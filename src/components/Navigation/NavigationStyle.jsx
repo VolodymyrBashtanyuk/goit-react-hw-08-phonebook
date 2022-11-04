@@ -2,10 +2,17 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
   padding: 20px;
-
   background-color: #36ada5;
   border-bottom: 1px solid black;
-  /* margin-bottom: 20px; */
+`;
+
+export const List = styled.ul`
+  display: flex;
+`;
+
+export const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Item = styled.li`
@@ -16,10 +23,6 @@ export const Item = styled.li`
   :hover {
     color: #92ff01;
   }
-`;
-
-export const List = styled.ul`
-  display: flex;
 `;
 
 export const Main = styled.main`

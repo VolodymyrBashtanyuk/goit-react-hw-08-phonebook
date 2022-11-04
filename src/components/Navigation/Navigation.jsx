@@ -1,24 +1,24 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Wrapper, Item, List, Footer, Main } from './NavigationStyle';
+import { Wrapper, Nav, Footer, Main } from './NavigationStyle';
+import { MainNavbar } from './MainNavbar';
+import { UserNavbar } from './UserNavbar';
+import { getLoggedIn } from 'redux/selectors';
+import { useSelector } from 'react-redux';
 // import { Loader } from 'components/Loader/Loader';
 
 export const SharedLayout = () => {
+  const isLoggedIn = useSelector(getLoggedIn);
+
   return (
     <>
       <Wrapper>
-        <nav>
-          <List>
-            <Item>
-              <NavLink to="/" end>
-                Home
-              </NavLink>
-            </Item>
-            <Item>
-              <NavLink to="/phoneBook">Phone book</NavLink>
-            </Item>
-          </List>
-        </nav>
+        <Nav>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
+          {!isLoggedIn ? <MainNavbar /> : <UserNavbar />}
+        </Nav>
       </Wrapper>
       <Main>
         <Suspense>

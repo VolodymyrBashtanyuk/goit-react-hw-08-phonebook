@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instanceContact = axios.create({
-  baseURL: 'https://6359a38938725a1746b554a3.mockapi.io/api/',
+  baseURL: 'https://connections-api.herokuapp.com/',
 });
 
 export const getContacts = async () => {
@@ -18,3 +18,5 @@ export const removeContacts = async (id) => {
   const response = await instanceContact.delete(`/contacts/${id}`);
         return response.data;
     }
+
+    // https://connections-api.herokuapp.com/
