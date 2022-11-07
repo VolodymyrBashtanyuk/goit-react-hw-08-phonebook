@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[795],{1795:function(e,o,t){t.r(o);var n=t(184);o.default=function(){return(0,n.jsx)("p",{children:" hallo i gled to see You"})}}}]);
-//# sourceMappingURL=795.38dc1a1a.chunk.js.map
