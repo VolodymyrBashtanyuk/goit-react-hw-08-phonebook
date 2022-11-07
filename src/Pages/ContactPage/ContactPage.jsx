@@ -4,7 +4,7 @@ import { Filter } from 'components/FilterContact/FilterContact';
 import { ContactList } from 'components/ContactList/ContactList';
 import { SubTitle, ErrorMessage } from 'components/AppStyle';
 import { getContact, getFilter, getState, getLoggedIn } from 'redux/selectors';
-import { filterContacts } from 'redux/filterSlice';
+import { filterContacts } from 'redux/Contacts/filterSlice';
 import { fetchContacts, removeContact } from 'redux/Contacts/contactsOperation';
 import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';

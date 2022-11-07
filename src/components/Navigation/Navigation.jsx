@@ -5,11 +5,10 @@ import { MainNavbar } from './MainNavbar';
 import { UserNavbar } from './UserNavbar';
 import { getLoggedIn } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-// import { Loader } from 'components/Loader/Loader';
+// import { Tabs, TabList, TabPanels, TabPanel, Tab } from '@chakra-ui/react';
 
 export const SharedLayout = () => {
   const isLoggedIn = useSelector(getLoggedIn);
-
   return (
     <>
       <Wrapper>

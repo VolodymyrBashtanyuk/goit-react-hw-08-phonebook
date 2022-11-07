@@ -1,4 +1,4 @@
-import { ThreeCircles } from 'react-loader-spinner';
+import { ThreeCircles, Puff } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
@@ -14,13 +14,17 @@ export const Loader = () => {
   );
 };
 
-// height="100"
-//       width="100"
-//       color="#7265ec"
-//       wrapperStyle={{}}
-//       wrapperClass="loading"
-//       visible={true}
-//       outerCircleColor=""
-//       innerCircleColor=""
-//       barColor=""
-//       ariaLabel="circles-with-bar-loading"
+export const Loading = () => {
+  return (
+    <Puff
+      height="80"
+      width="80"
+      radisu={1}
+      color="#266225"
+      ariaLabel="puff-loading"
+      wrapperStyle={{}}
+      wrapperClass="loading"
+      visible={true}
+    />
+  );
+};

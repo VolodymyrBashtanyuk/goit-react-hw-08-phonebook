@@ -5,3 +5,5 @@ export const getState = ({ contacts }) => ({ isLoading: contacts.isLoading, erro
 
 export const getLoggedIn = ({ auth }) => auth.isLoggedIn;
 export const getUserName = ({ auth }) => auth.user.name;
+export const getUserToken = ({ auth }) => auth.token;
+export const getLoadingUserStatus = ({ auth }) => auth.isLoadingCurrentUser;

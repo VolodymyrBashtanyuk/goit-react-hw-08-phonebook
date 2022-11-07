@@ -1,4 +1,5 @@
-import * as api from '../../ContactsApi/contactsApi'
+
+import { instanceContact } from 'auth/authRegister';
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { success, errorMassege, removeMessage} from 'components/Notifigation/Notification';
 
@@ -6,18 +7,19 @@ import { success, errorMassege, removeMessage} from 'components/Notifigation/Not
 export const fetchContacts = createAsyncThunk('contacts/fetch',
   async (_, thunkApi) => {
     try {
-      const data = await api.getContacts();
+      const { data } = await instanceContact.get('/contacts');
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
   });
   export const addContact = createAsyncThunk('contacts/add',
-  async (data, thunkApi) => {
+    async (result, thunkApi) => {
+    console.log(result)
     try {
-      const result = await api.addContacts(data);
+      const { data } = await instanceContact.post('/contacts', result); 
       success();
-      return result;
+      return data;
     } catch (error) {
       errorMassege();
       return thunkApi.rejectWithValue(error.message);
@@ -25,14 +27,13 @@ export const fetchContacts = createAsyncThunk('contacts/fetch',
     });
   
      export const removeContact = createAsyncThunk('contacts/delete',
-       async (id, thunkApi) => {
+       async (contactId, thunkApi) => {
     try {
-      const result = await api.removeContacts(id);
-      removeMessage(result.name);
-      return result;
+      const {data} = await instanceContact.delete(`/contacts/${contactId}`);
+      removeMessage(data.name);
+      return data;
     } catch (error) {
       errorMassege();
       return thunkApi.rejectWithValue(error.message);
     }
   });
-

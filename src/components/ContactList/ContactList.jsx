@@ -2,10 +2,10 @@ import { List, Item, Button, Text } from './ContactListStyled';
 import PropTypes from 'prop-types';
 
 export const ContactList = ({ items, onDelete }) => {
-  const itemList = items.map(({ id, name, phone }) => {
+  const itemList = items.map(({ id, name, number }) => {
     return (
       <Item key={id}>
-        <Text>{name}</Text> <Text>{phone}</Text>
+        <Text>{name}</Text> <Text>{number}</Text>
         <Button onClick={() => onDelete(id)}>Delete</Button>
       </Item>
     );
