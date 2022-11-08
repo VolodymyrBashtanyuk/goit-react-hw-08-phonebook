@@ -20,7 +20,7 @@ export const Loading = () => {
       height="80"
       width="80"
       radisu={1}
-      color="#266225"
+      color="#0e1dbd"
       ariaLabel="puff-loading"
       wrapperStyle={{}}
       wrapperClass="loading"

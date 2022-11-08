@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Wrapper, Nav, Footer, Main } from './NavigationStyle';
+import { Wrapper, Nav, Footer, Main, Home } from './NavigationStyle';
 import { MainNavbar } from './MainNavbar';
 import { UserNavbar } from './UserNavbar';
 import { getLoggedIn } from 'redux/selectors';
@@ -14,7 +14,7 @@ export const SharedLayout = () => {
       <Wrapper>
         <Nav>
           <NavLink to="/" end>
-            Home
+            <Home>Home</Home>
           </NavLink>
           {!isLoggedIn ? <MainNavbar /> : <UserNavbar />}
         </Nav>

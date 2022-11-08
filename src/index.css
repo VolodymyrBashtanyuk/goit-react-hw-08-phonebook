@@ -47,11 +47,12 @@ a {
   color: inherit;
 }
 .active {
-  color: #92ff01;;
+  color: #0dede3;;
 }
 .loading {
   justify-content: center;
-  margin-top: 40px;
+  align-items: center;
+  /* margin-top: 40px; */
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
 }
