@@ -12,7 +12,7 @@ export const Text = styled.p`
 
 export const Button = styled.button`
   font-size: 20px;
-
+  color: white;
   background-color: transparent;
   border: transparent;
   padding: 0;

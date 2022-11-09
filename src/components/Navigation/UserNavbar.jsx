@@ -7,10 +7,10 @@ export const UserNavbar = () => {
     <>
       <List>
         <Item>
-          <NavLink to="/customer">Contacts</NavLink>
+          <NavLink to="/contacts">Contacts</NavLink>
         </Item>
         <Item>
-          <NavLink to="/contacts">Phone book</NavLink>
+          <NavLink to="/customer">Phone book</NavLink>
         </Item>
       </List>
       <UserLogout />

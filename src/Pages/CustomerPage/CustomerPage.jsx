@@ -1,33 +1,66 @@
-import { ContactForm } from '../../components/ContactForm/ContactForm';
-import { Title } from '../../components/AppStyle';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContact } from '../../redux/selectors';
-import { addContact } from 'redux/Contacts/contactsOperation';
-import { dublicate } from 'components/Notifigation/Notification';
+import { useEffect } from 'react';
+import { Filter } from 'components/FilterContact/FilterContact';
+import { ContactList } from 'components/ContactList/ContactList';
+import { SubTitle, ErrorMessage } from 'components/AppStyle';
+import { getContact, getFilter, getState, getLoggedIn } from 'redux/selectors';
+import { filterContacts } from 'redux/Contacts/filterSlice';
+import { fetchContacts, removeContact } from 'redux/Contacts/contactsOperation';
+import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 
 const CustomerPage = () => {
-  const dispatch = useDispatch();
   const contacts = useSelector(getContact);
+  const { isLoading, error } = useSelector(getState);
+  const filter = useSelector(getFilter);
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(getLoggedIn);
 
-  const isDublicate = ({ name }) => {
-    const result = contacts.find(item => item.name === name);
-    return result;
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  const filterChange = evt => {
+    const { value } = evt.currentTarget;
+    dispatch(filterContacts(value));
   };
 
-  const onAddContacts = data => {
-    if (isDublicate(data)) {
-      dublicate(data);
-      return;
+  const getFilters = () => {
+    if (!filter) {
+      return contacts;
     }
-    console.log(data);
-    dispatch(addContact(data));
+    const normalaizedFilter = filter.toLowerCase();
+
+    return contacts.filter(({ name }) => {
+      const normalaizedName = name.toLowerCase();
+      const result = normalaizedName.includes(normalaizedFilter);
+      return result;
+    });
   };
+  const onDelete = id => {
+    dispatch(removeContact(id));
+  };
+
   return (
     <>
-      <Title>Add contacts in Phonebook</Title>
-      <ContactForm onAddContacs={onAddContacts} />
-      <ToastContainer />
+      {isLoggedIn && (
+        <>
+          <SubTitle>Contacts</SubTitle>
+          <Filter onChange={filterChange} value={filter} />
+          {error ? (
+            <ErrorMessage>Please try again later {error} :(</ErrorMessage>
+          ) : (
+            <>
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <ContactList items={getFilters()} onDelete={onDelete} />
+              )}
+              <ToastContainer />
+            </>
+          )}
+        </>
+      )}
     </>
   );
 };

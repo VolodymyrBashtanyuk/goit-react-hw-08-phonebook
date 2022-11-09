@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   color: white;
   padding: 20px;
-  background-color: #163dcd;
+  background-color: #306178;
   border-bottom: 1px solid #edd213;
 `;
 
@@ -38,7 +38,7 @@ export const Footer = styled.footer`
   color: white;
   padding: 20px;
   text-align: center;
-  background-color: #163dcd;
+  background-color: #306178;
   border-top: 1px solid #edd213;
 `;
 
