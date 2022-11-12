@@ -1,18 +1,11 @@
-import { useDispatch } from 'react-redux';
-import { removeContact, updateContact } from 'redux/Contacts/contactsOperation';
+// import { useDispatch } from 'react-redux';
+// import { removeContact } from 'redux/Contacts/contactsOperation';
 import { ChakraProvider } from '@chakra-ui/react';
-import { UpdateContact } from 'components/Modal/UpdateContact';
-import { MdDeleteForever, MdSystemUpdate } from 'react-icons/md';
-import { FaPhoneAlt } from 'react-icons/fa';
-import {
-  ButtonCall,
-  ButtonDell,
-  ButtonUpdate,
-  Container,
-} from '../ContactListStyled';
-
-// import { useSelector } from 'react-redux';
-// import { getContact } from 'redux/selectors';
+import { UpdateContactModal } from 'components/Modal/UpdateContactModal';
+import { DeleteContactModal } from 'components/Modal/DeleteContactModal';
+import { CallContactModal } from 'components/Modal/CallContactModal';
+// import { MdDeleteForever } from 'react-icons/md';
+import { Container } from '../ContactListStyled';
 
 export const ButtonList = ({ id, name, number }) => {
   //   const contacts = useSelector(getContact);
@@ -27,29 +20,22 @@ export const ButtonList = ({ id, name, number }) => {
   //   });
   //   console.log(list.id);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   //   const onUpdate = () => {
   //     UpdateContact();
   //   };
 
-  const onDelete = id => {
-    dispatch(removeContact(id));
-  };
+  // const onDelete = id => {
+  //   dispatch(removeContact(id));
+  // };
 
   return (
     <ChakraProvider>
       <Container>
-        <ButtonCall onClick={() => onDelete(id)}>
-          <FaPhoneAlt size="25px" />
-        </ButtonCall>
-        <UpdateContact id={id} name={name} number={number} />
-        {/* <ButtonUpdate onClick={() => onUpdate()}>
-          <MdSystemUpdate size="25px" />
-        </ButtonUpdate> */}
-        <ButtonDell onClick={() => onDelete(id)}>
-          <MdDeleteForever size="25px" />
-        </ButtonDell>
+        <CallContactModal name={name} />
+        <UpdateContactModal id={id} name={name} number={number} />
+        <DeleteContactModal id={id} />
       </Container>
     </ChakraProvider>
   );

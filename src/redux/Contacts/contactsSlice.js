@@ -52,7 +52,9 @@ const contactsSlice = createSlice({
         },
          [updateContact.fulfilled](state, action) {
             state.isLoading = false;
-             state.items = action.payload;
+            const index  = state.items.findIndex(item => item.id === action.payload.id)
+             state.items[index] = action.payload;
+
         },
         [updateContact.rejected](state, action) {
             state.isLoading = false;

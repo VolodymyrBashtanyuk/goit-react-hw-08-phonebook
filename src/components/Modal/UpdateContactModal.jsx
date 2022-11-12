@@ -1,8 +1,6 @@
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateContact, addContact } from 'redux/Contacts/contactsOperation';
-
-// import { useState } from 'react';
+import { updateContact } from 'redux/Contacts/contactsOperation';
 import {
   Button,
   Modal,
@@ -17,16 +15,11 @@ import {
   Input,
   useDisclosure,
 } from '@chakra-ui/react';
-import { MdDeleteForever, MdSystemUpdate } from 'react-icons/md';
-import { FaPhoneAlt } from 'react-icons/fa';
-import {
-  ButtonCall,
-  ButtonDell,
-  ButtonUpdate,
-  Container,
-} from '../ContactList/ContactListStyled';
+import { MdSystemUpdate } from 'react-icons/md';
 
-export const UpdateContact = ({ id, name, number }) => {
+import { ButtonUpdate } from '../ContactList/ContactListStyled';
+
+export const UpdateContactModal = ({ id, name, number }) => {
   const [names, setNames] = useState(name);
   const [numbers, setNumbers] = useState(number);
 
@@ -35,7 +28,6 @@ export const UpdateContact = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   const onUpdate = () => {
-    // dispatch(addContact({ names, numbers }));
     dispatch(updateContact({ id, names, numbers }));
   };
 
@@ -52,10 +44,6 @@ export const UpdateContact = ({ id, name, number }) => {
         return;
     }
   };
-
-  //   console.log(id);
-  //   console.log(name);
-  //   console.log(number);
 
   const initialRef = useRef(null);
   const finalRef = useRef(null);
