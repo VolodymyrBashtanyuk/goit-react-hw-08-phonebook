@@ -29,9 +29,7 @@ export const Item = styled.li`
 `;
 
 export const Main = styled.main`
-  background-color: #b3e6ed;
   min-height: 100vh;
-  /* padding-top: 40px; */
 `;
 
 export const Footer = styled.footer`

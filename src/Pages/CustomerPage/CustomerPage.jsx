@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { Filter } from 'components/FilterContact/FilterContact';
 import { ContactList } from 'components/ContactList/ContactList';
 import { SubTitle, ErrorMessage } from 'components/AppStyle';
-import { getContact, getFilter, getState, getLoggedIn } from 'redux/selectors';
+import { getContact, getFilter, getState } from 'redux/selectors';
 import { filterContacts } from 'redux/Contacts/filterSlice';
 import { fetchContacts } from 'redux/Contacts/contactsOperation';
-import { Loader } from 'components/Loader/Loader';
+import { Loader, LoaderPage } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 import { Wrapper } from 'components/ContactForm/ContactFormStyle';
 
@@ -15,7 +15,7 @@ const CustomerPage = () => {
   const { isLoading, error } = useSelector(getState);
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(getLoggedIn);
+  // const isLoggedIn = useSelector(getLoggedIn);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -38,14 +38,13 @@ const CustomerPage = () => {
       return result;
     });
   };
-  // const onDelete = id => {
-  //   dispatch(removeContact(id));
-  // };
 
   return (
-    <Wrapper>
-      {isLoggedIn && (
-        <>
+    <>
+      {isLoading ? (
+        <LoaderPage />
+      ) : (
+        <Wrapper>
           <SubTitle>Contacts</SubTitle>
           <Filter onChange={filterChange} value={filter} />
           {error ? (
@@ -56,9 +55,9 @@ const CustomerPage = () => {
               <ToastContainer />
             </>
           )}
-        </>
+        </Wrapper>
       )}
-    </Wrapper>
+    </>
   );
 };
 

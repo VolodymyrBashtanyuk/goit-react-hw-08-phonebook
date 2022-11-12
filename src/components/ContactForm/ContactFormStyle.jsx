@@ -16,10 +16,12 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   width: 350px;
-  height: 20px;
+  background-color: #ebeced;
+  border: 1px solid black;
   padding: 10px;
   margin-bottom: 10px;
 `;
+
 export const Button = styled.button`
   width: 100px;
   background-color: #3ca9ba;

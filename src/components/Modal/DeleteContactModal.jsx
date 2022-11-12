@@ -33,8 +33,8 @@ export const DeleteContactModal = ({ id }) => {
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalBody pb={5} pt={5}>
-            Are You sure want to delete Contact
+          <ModalBody pb={5} pt={5} color="red">
+            Are You sure want to DELETE Contact
           </ModalBody>
           <ModalFooter>
             <Button mr={4} colorScheme="red" onClick={() => onDelete(id)}>

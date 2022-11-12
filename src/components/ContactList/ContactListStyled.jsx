@@ -15,30 +15,21 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   display: flex;
-  /* align-items: center; */
-  /* justify-content: space-between; */
-
+  align-items: center;
+  justify-content: space-evenly;
   font-size: 25px;
   font-weight: bold;
   border: 1px solid #34b8e9;
   background-color: #306178;
   box-shadow: 13px 19px 32px -9px rgba(42, 66, 21, 07);
-  /* :not(:last-child) {
-    margin-bottom: 15px;
-  } */
 `;
+
 export const Text = styled.p`
   margin-bottom: 10px;
-  /* text-align: end; */
-  /* margin-right: 5px; */
-  /* width: 35%;
-  border-right: 1px solid #34b8e9; */
 `;
 
 export const ButtonCall = styled.button`
-  /* width: 120px; */
   color: #27872a;
-
   background-color: #c9bebe;
   border: #b76677;
   text-align: center;
@@ -52,13 +43,10 @@ export const ButtonCall = styled.button`
 `;
 
 export const ButtonDell = styled.button`
-  /* width: 120px; */
   color: #b01313;
-
   background-color: #c9bebe;
   border: #b76677;
   text-align: center;
-  /* margin-right: 10px; */
   padding: 0;
   cursor: pointer;
   :hover,
@@ -68,7 +56,6 @@ export const ButtonDell = styled.button`
 `;
 
 export const ButtonUpdate = styled.button`
-  /* width: 120px; */
   color: #626226;
   background-color: #c9bebe;
   border: #b76677;
@@ -83,10 +70,10 @@ export const ButtonUpdate = styled.button`
 `;
 
 export const Img = styled.img`
+  height: fit-content;
   border: 1px solid black;
   border-radius: 25%;
-  margin-right: 40px;
-  margin-left: 10px;
+  object-fit: contain;
   cursor: pointer;
 `;
 
