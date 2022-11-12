@@ -5,6 +5,7 @@ import { getContact } from '../../redux/selectors';
 import { addContact } from 'redux/Contacts/contactsOperation';
 import { dublicate } from 'components/Notifigation/Notification';
 import { ToastContainer } from 'react-toastify';
+import { Wrapper } from 'components/ContactForm/ContactFormStyle';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -20,15 +21,14 @@ const ContactsPage = () => {
       dublicate(data);
       return;
     }
-    console.log(data);
     dispatch(addContact(data));
   };
   return (
-    <>
+    <Wrapper>
       <Title>Add contacts in Phonebook</Title>
       <ContactForm onAddContacs={onAddContacts} />
       <ToastContainer />
-    </>
+    </Wrapper>
   );
 };
 

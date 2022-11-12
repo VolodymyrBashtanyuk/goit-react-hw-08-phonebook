@@ -13,9 +13,9 @@ export const fetchContacts = createAsyncThunk('contacts/fetch',
       return thunkApi.rejectWithValue(error.message);
     }
   });
-  export const addContact = createAsyncThunk('contacts/add',
-    async (result, thunkApi) => {
-    console.log(result)
+
+export const addContact = createAsyncThunk('contacts/add',
+  async (result, thunkApi) => {
     try {
       const { data } = await instanceContact.post('/contacts', result); 
       success();
@@ -26,8 +26,8 @@ export const fetchContacts = createAsyncThunk('contacts/fetch',
     }
     });
   
-     export const removeContact = createAsyncThunk('contacts/delete',
-       async (contactId, thunkApi) => {
+export const removeContact = createAsyncThunk('contacts/delete',
+  async (contactId, thunkApi) => {
     try {
       const {data} = await instanceContact.delete(`/contacts/${contactId}`);
       removeMessage(data.name);
@@ -35,5 +35,26 @@ export const fetchContacts = createAsyncThunk('contacts/fetch',
     } catch (error) {
       errorMassege();
       return thunkApi.rejectWithValue(error.message);
+    }
+  });
+
+  export const updateContact = createAsyncThunk('contacts/update',
+    async (contactId, { rejectWithValue}) => {
+      console.log((contactId))
+      const result = {
+        name: contactId.names,
+        number: contactId.numbers,
+      }
+
+      // const { contacts } = getState();
+    console.log(result)
+      
+    try {
+      const {data} = await instanceContact.patch(`contacts/${contactId.id}`, result );
+      // removeMessage(data.name);
+      return data;
+    } catch (error) {
+      errorMassege();
+      return rejectWithValue(error.message);
     }
   });

@@ -1,4 +1,3 @@
-// import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'auth/authRegister';
@@ -15,7 +14,7 @@ import {
   Icon,
 } from '@chakra-ui/react';
 import { LockIcon, EmailIcon } from '@chakra-ui/icons';
-import { MdPermContactCalendar } from 'react-icons/md';
+import { MdManageAccounts } from 'react-icons/md';
 
 export const RegistrationForm = () => {
   const [name, setName] = useState('');
@@ -84,7 +83,7 @@ export const RegistrationForm = () => {
               pointerEvents="none"
               children={
                 <Icon
-                  as={MdPermContactCalendar}
+                  as={MdManageAccounts}
                   color="#306178"
                   _focus={{ color: '#3182ce' }}
                 />

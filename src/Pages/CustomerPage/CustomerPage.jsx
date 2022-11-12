@@ -5,9 +5,10 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { SubTitle, ErrorMessage } from 'components/AppStyle';
 import { getContact, getFilter, getState, getLoggedIn } from 'redux/selectors';
 import { filterContacts } from 'redux/Contacts/filterSlice';
-import { fetchContacts, removeContact } from 'redux/Contacts/contactsOperation';
+import { fetchContacts } from 'redux/Contacts/contactsOperation';
 import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
+import { Wrapper } from 'components/ContactForm/ContactFormStyle';
 
 const CustomerPage = () => {
   const contacts = useSelector(getContact);
@@ -37,12 +38,12 @@ const CustomerPage = () => {
       return result;
     });
   };
-  const onDelete = id => {
-    dispatch(removeContact(id));
-  };
+  // const onDelete = id => {
+  //   dispatch(removeContact(id));
+  // };
 
   return (
-    <>
+    <Wrapper>
       {isLoggedIn && (
         <>
           <SubTitle>Contacts</SubTitle>
@@ -51,17 +52,13 @@ const CustomerPage = () => {
             <ErrorMessage>Please try again later {error} :(</ErrorMessage>
           ) : (
             <>
-              {isLoading ? (
-                <Loader />
-              ) : (
-                <ContactList items={getFilters()} onDelete={onDelete} />
-              )}
+              {isLoading ? <Loader /> : <ContactList items={getFilters()} />}
               <ToastContainer />
             </>
           )}
         </>
       )}
-    </>
+    </Wrapper>
   );
 };
 

@@ -4,7 +4,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
-
+  border: 1px solid back;
   margin-right: auto;
   margin-left: auto;
 `;
@@ -33,3 +33,10 @@ export const Button = styled.button`
     background-color: #4f94f3;
   }
 `;
+
+export const Wrapper = styled.div`
+  height: 100vh;
+  background-image: url(https://static4.depositphotos.com/1011006/279/v/450/depositphotos_2790613-stock-illustration-notebook-and-lens-concept.jpg);
+`;
+
+//https://static4.depositphotos.com/1011006/279/v/450/depositphotos_2790613-stock-illustration-notebook-and-lens-concept.jpg

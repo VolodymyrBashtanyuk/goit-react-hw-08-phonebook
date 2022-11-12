@@ -47,7 +47,7 @@ export const LoginForm = () => {
   return (
     <Box
       h="100vh"
-      bgImage="url('https://static4.depositphotos.com/1011006/279/v/600/depositphotos_2790613-stock-illustration-notebook-and-lens-concept.jpg')"
+      bgImage="url('https://st2.depositphotos.com/3715149/7222/v/450/depositphotos_72226323-stock-illustration-contacts-simple-vector-icon-set.jpg')"
       bgPosition="center"
       bgRepeat="repeat"
       pt="40px"
