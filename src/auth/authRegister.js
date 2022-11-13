@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { wrongLogin, wrongRegistration } from "components/Notifigation/Notification";
 
 export const instanceContact = axios.create({
   baseURL: 'https://connections-api.herokuapp.com',
@@ -22,6 +23,7 @@ export const register = createAsyncThunk('auth/register',
       token.set(data.token)
       return data;
     } catch (error) {
+      wrongRegistration();
       return thunkApi.rejectWithValue(error.message);
     }
     });
@@ -34,6 +36,7 @@ export const register = createAsyncThunk('auth/register',
       token.set(data.token)
       return data;
     } catch (error) {
+      wrongLogin();
       return thunkApi.rejectWithValue(error.message);
     }
       });

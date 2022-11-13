@@ -44,11 +44,12 @@ export const LoginForm = () => {
 
   return (
     <Box
-      h="100vh"
+      mh="100vh"
       bgImage="url('https://st2.depositphotos.com/3715149/7222/v/450/depositphotos_72226323-stock-illustration-contacts-simple-vector-icon-set.jpg')"
       bgPosition="center"
       bgRepeat="repeat"
       pt="40px"
+      pb="40px"
     >
       <form onSubmit={submitLogin}>
         <FormControl

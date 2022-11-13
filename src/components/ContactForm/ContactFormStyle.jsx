@@ -38,6 +38,6 @@ export const Button = styled.button`
 `;
 
 export const Wrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(https://static4.depositphotos.com/1011006/279/v/450/depositphotos_2790613-stock-illustration-notebook-and-lens-concept.jpg);
 `;

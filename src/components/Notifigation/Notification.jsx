@@ -20,3 +20,13 @@ export const removeMessage = name =>
   toast.info(`You are successful delete ${name} from Phone Book`, {
     theme: 'colored',
   });
+
+export const wrongLogin = () =>
+  toast.warn('Opps wrong email or password please try again', {
+    theme: 'dark',
+  });
+
+export const wrongRegistration = () =>
+  toast.error('Sorry samething wrong :( please try again', {
+    theme: 'colored',
+  });

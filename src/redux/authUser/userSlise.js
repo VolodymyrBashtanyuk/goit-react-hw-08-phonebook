@@ -12,6 +12,7 @@ const initialState = {
     isLoading: false,
     isLoadingCurrentUser: false,
     isLoggedIn: false,
+    error: null,
 };
 
 const registerSlice = createSlice({
@@ -39,7 +40,7 @@ const registerSlice = createSlice({
             state.isLoading = false;
             state.user = action.payload.user;
             state.token = action.payload.token;
-             state.isLoggedIn = true;
+            state.isLoggedIn = true;
         },
         [loggedIn.rejected](state, action) {
             state.isLoading = false;
