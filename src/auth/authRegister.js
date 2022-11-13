@@ -56,7 +56,7 @@ export const userCurrent = createAsyncThunk('auth/current',
     const { auth } = getState();
     const userToken = auth.token;
 
-    if (auth.userToken === undefined) {
+    if (auth.userToken === null) {
       return rejectWithValue();
 
     }
