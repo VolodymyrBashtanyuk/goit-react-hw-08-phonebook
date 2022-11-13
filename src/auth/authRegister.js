@@ -56,8 +56,9 @@ export const userCurrent = createAsyncThunk('auth/current',
     const { auth } = getState();
     const userToken = auth.token;
 
-    if (auth.userToken === null) {
+    if (auth.userToken === undefined) {
       return rejectWithValue();
+
     }
     
     try {
@@ -68,4 +69,5 @@ export const userCurrent = createAsyncThunk('auth/current',
       token.unset();
       return rejectWithValue(error.message);
     }
+    
   });

@@ -5,8 +5,6 @@ export const Text = styled.p`
   align-items: center;
   color: #f3ecec;
   height: 100vh;
-  /* text-decoration: line-through; */
-
   background: linear-gradient(to bottom, #1463ce 0%, #1c6ea4 38%, #c4c505 100%);
   font-weight: bold;
   text-align: center;

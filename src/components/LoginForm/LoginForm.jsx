@@ -1,8 +1,6 @@
-// import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loggedIn } from 'auth/authRegister';
-// import * as Yup from 'yup';
 import {
   Box,
   FormControl,

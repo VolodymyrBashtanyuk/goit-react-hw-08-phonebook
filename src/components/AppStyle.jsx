@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
   text-align: center;
+  font-size: 30px;
+  font-weight: bold;
   margin-bottom: 20px;
   padding-top: 40px;
 `;

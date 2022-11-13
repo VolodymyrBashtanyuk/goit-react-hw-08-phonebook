@@ -1,4 +1,4 @@
-import { ThreeCircles, Puff, RotatingLines } from 'react-loader-spinner';
+import { ThreeCircles, Puff, ThreeDots } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
@@ -23,7 +23,7 @@ export const Loading = () => {
       color="#0e1dbd"
       ariaLabel="puff-loading"
       wrapperStyle={{}}
-      wrapperClass="loading"
+      wrapperClass="load"
       visible={true}
     />
   );
@@ -31,12 +31,14 @@ export const Loading = () => {
 
 export const LoaderPage = () => {
   return (
-    <RotatingLines
-      strokeColor="grey"
-      strokeWidth="5"
-      animationDuration="0.75"
-      width="96"
-      visible={true}
+    <ThreeDots
+      height="80"
+      width="80"
+      radius="9"
+      color="#3450a6"
+      wrapperStyle={{}}
+      wrapperClassName="div"
+      ariaLabel="three-dots-loading"
     />
   );
 };

@@ -5,10 +5,11 @@ import { MainNavbar } from './MainNavbar';
 import { UserNavbar } from './UserNavbar';
 import { getLoggedIn } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-// import { Tabs, TabList, TabPanels, TabPanel, Tab } from '@chakra-ui/react';
+import { LoaderPage } from 'components/Loader/Loader';
 
 export const SharedLayout = () => {
   const isLoggedIn = useSelector(getLoggedIn);
+
   return (
     <>
       <Wrapper>
@@ -20,7 +21,7 @@ export const SharedLayout = () => {
         </Nav>
       </Wrapper>
       <Main>
-        <Suspense>
+        <Suspense fallback={<LoaderPage />}>
           <Outlet />
         </Suspense>
       </Main>
@@ -30,5 +31,3 @@ export const SharedLayout = () => {
     </>
   );
 };
-
-// fallback={<Loader />}

@@ -23,7 +23,8 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  width: 100px;
+  width: 150px;
+  font-weight: bold;
   background-color: #3ca9ba;
   border: transparent;
   margin-right: auto;
@@ -40,5 +41,3 @@ export const Wrapper = styled.div`
   height: 100vh;
   background-image: url(https://static4.depositphotos.com/1011006/279/v/450/depositphotos_2790613-stock-illustration-notebook-and-lens-concept.jpg);
 `;
-
-//https://static4.depositphotos.com/1011006/279/v/450/depositphotos_2790613-stock-illustration-notebook-and-lens-concept.jpg

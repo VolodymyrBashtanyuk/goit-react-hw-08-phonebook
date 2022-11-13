@@ -1,10 +1,10 @@
-import { ContactForm } from '../../components/ContactForm/ContactForm';
-import { Title } from '../../components/AppStyle';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContact } from '../../redux/selectors';
+import { getContact } from 'redux/selectors';
 import { addContact } from 'redux/Contacts/contactsOperation';
 import { dublicate } from 'components/Notifigation/Notification';
 import { ToastContainer } from 'react-toastify';
+import { Title } from 'components/AppStyle';
 import { Wrapper } from 'components/ContactForm/ContactFormStyle';
 
 const ContactsPage = () => {

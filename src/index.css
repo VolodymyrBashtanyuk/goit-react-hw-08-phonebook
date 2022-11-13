@@ -44,9 +44,18 @@ a {
 .active {
   color: #0dede3;;
 }
+
+.load {
+  justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+}
+
 .loading {
   justify-content: center;
   align-items: center;
-  max-width: calc(100vw - 48px);
-  max-height: calc(100vh - 24px);
+}
+div {
+  justify-content: center;
+    align-items: center;
 }

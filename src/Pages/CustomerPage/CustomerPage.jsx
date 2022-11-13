@@ -2,12 +2,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Filter } from 'components/FilterContact/FilterContact';
 import { ContactList } from 'components/ContactList/ContactList';
-import { SubTitle, ErrorMessage } from 'components/AppStyle';
 import { getContact, getFilter, getState } from 'redux/selectors';
 import { filterContacts } from 'redux/Contacts/filterSlice';
 import { fetchContacts } from 'redux/Contacts/contactsOperation';
-import { Loader, LoaderPage } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
+import { SubTitle, ErrorMessage } from 'components/AppStyle';
 import { Wrapper } from 'components/ContactForm/ContactFormStyle';
 
 const CustomerPage = () => {
@@ -15,7 +15,6 @@ const CustomerPage = () => {
   const { isLoading, error } = useSelector(getState);
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-  // const isLoggedIn = useSelector(getLoggedIn);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -40,24 +39,18 @@ const CustomerPage = () => {
   };
 
   return (
-    <>
-      {isLoading ? (
-        <LoaderPage />
+    <Wrapper>
+      <SubTitle>Contacts</SubTitle>
+      <Filter onChange={filterChange} value={filter} />
+      {error ? (
+        <ErrorMessage>Please try again later {error} :(</ErrorMessage>
       ) : (
-        <Wrapper>
-          <SubTitle>Contacts</SubTitle>
-          <Filter onChange={filterChange} value={filter} />
-          {error ? (
-            <ErrorMessage>Please try again later {error} :(</ErrorMessage>
-          ) : (
-            <>
-              {isLoading ? <Loader /> : <ContactList items={getFilters()} />}
-              <ToastContainer />
-            </>
-          )}
-        </Wrapper>
+        <>
+          {isLoading ? <Loader /> : <ContactList items={getFilters()} />}
+          <ToastContainer />
+        </>
       )}
-    </>
+    </Wrapper>
   );
 };
 

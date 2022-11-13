@@ -40,18 +40,12 @@ export const removeContact = createAsyncThunk('contacts/delete',
 
   export const updateContact = createAsyncThunk('contacts/update',
     async (contactId, { rejectWithValue}) => {
-      console.log((contactId))
       const result = {
         name: contactId.names,
         number: contactId.numbers,
       }
-
-      // const { contacts } = getState();
-    console.log(result)
-      
     try {
       const {data} = await instanceContact.patch(`contacts/${contactId.id}`, result );
-      // removeMessage(data.name);
       return data;
     } catch (error) {
       errorMassege();
