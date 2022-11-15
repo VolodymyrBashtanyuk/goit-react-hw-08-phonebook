@@ -55,6 +55,7 @@ export const RegistrationForm = () => {
 
   return (
     <Box
+      // w={{ base: '300px', md: '400px' }}
       minH="100vh"
       bgImage="url('https://st2.depositphotos.com/3715149/7222/v/450/depositphotos_72226323-stock-illustration-contacts-simple-vector-icon-set.jpg')"
       bgPosition="center"
@@ -68,7 +69,7 @@ export const RegistrationForm = () => {
           borderRadius="20px"
           bg="#306178"
           p="20px"
-          w="600px"
+          w={{ base: '100%', sm: '400px', md: '600px' }}
           mr="auto"
           ml="auto"
           pt="20px"

@@ -3,23 +3,42 @@ import styled from 'styled-components';
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  border: 1px solid back;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: 100vw;
+  /* border: 1px solid back; */
+  /* margin-right: auto;
+  margin-left: auto; */
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media screen and (min-width: 1280px) {
+    /* font-size: 30px; */
+  }
 `;
 
 export const Label = styled.label`
-  font-size: 25px;
+  font-size: 15px;
   margin-bottom: 10px;
+  /* font-size: 25px; */
 `;
 
 export const Input = styled.input`
-  width: 350px;
+  max-width: 100vw;
   background-color: #ebeced;
   border: 1px solid black;
   padding: 10px;
   margin-bottom: 10px;
+
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 768px) {
+    width: 350px;
+  }
+  @media screen and (min-width: 1280px) {
+  }
 `;
 
 export const Button = styled.button`

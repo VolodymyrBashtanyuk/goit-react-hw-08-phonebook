@@ -57,7 +57,7 @@ export const LoginForm = () => {
           borderRadius="20px"
           bg="#306178"
           p="20px"
-          w="600px"
+          w={{ base: '100%', sm: '400px', md: '600px' }}
           mr="auto"
           ml="auto"
           pt="20px"

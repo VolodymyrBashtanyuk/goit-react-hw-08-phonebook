@@ -2,10 +2,21 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding-top: 40px;
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    /* font-size: 30px; */
+  }
 `;
 
 export const SubTitle = styled.h2`
