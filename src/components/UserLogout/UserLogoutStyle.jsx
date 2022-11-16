@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 export const Text = styled.p`
   font-size: 20px;
-  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+  /* margin-right: 20px; */
 `;
 
 export const Button = styled.button`

@@ -1,14 +1,16 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Wrapper, Nav, Footer, Main, Home } from './NavigationStyle';
-import { MainNavbar } from './MainNavbar';
-import { UserNavbar } from './UserNavbar';
-import { getLoggedIn } from 'redux/selectors';
-import { useSelector } from 'react-redux';
+// import { MainNavbar } from './MainNavbar';
+// import { UserNavbar } from './UserNavbar';
+import { AdaptiveNavbar } from './NavigationAdaptive';
+// import { getLoggedIn } from 'redux/selectors';
+// import { useSelector } from 'react-redux';
 import { LoaderPage } from 'components/Loader/Loader';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export const SharedLayout = () => {
-  const isLoggedIn = useSelector(getLoggedIn);
+  // const isLoggedIn = useSelector(getLoggedIn);
 
   return (
     <>
@@ -17,7 +19,10 @@ export const SharedLayout = () => {
           <NavLink to="/" end>
             <Home>Home</Home>
           </NavLink>
-          {!isLoggedIn ? <MainNavbar /> : <UserNavbar />}
+          <ChakraProvider>
+            <AdaptiveNavbar />
+            {/* {!isLoggedIn ? <MainNavbar /> : <UserNavbar />} */}
+          </ChakraProvider>
         </Nav>
       </Wrapper>
       <Main>

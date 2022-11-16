@@ -1,15 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import { List, Item } from './NavigationStyle';
 
-export const MainNavbar = () => {
+export const MainNavbar = ({ onClose }) => {
   return (
     <>
       <List>
         <Item>
-          <NavLink to="/register">Registration</NavLink>
+          <NavLink to="/register" onClick={onClose}>
+            Registration
+          </NavLink>
         </Item>
         <Item>
-          <NavLink to="/login">Log in</NavLink>
+          <NavLink to="/login" onClick={onClose}>
+            Log in
+          </NavLink>
         </Item>
       </List>
     </>

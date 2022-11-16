@@ -1,19 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import { List, Item } from './NavigationStyle';
-import { UserLogout } from 'components/UserLogout/UserLogout';
 
-export const UserNavbar = () => {
+export const UserNavbar = ({ onClose }) => {
   return (
     <>
       <List>
         <Item>
-          <NavLink to="/contacts">Contacts</NavLink>
+          <NavLink to="/contacts" onClick={onClose}>
+            Contacts
+          </NavLink>
         </Item>
         <Item>
-          <NavLink to="/customer">Phone book</NavLink>
+          <NavLink to="/customer" onClick={onClose}>
+            Phone book
+          </NavLink>
         </Item>
       </List>
-      <UserLogout />
     </>
   );
 };

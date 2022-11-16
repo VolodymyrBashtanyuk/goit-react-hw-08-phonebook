@@ -7,6 +7,7 @@ export const Title = styled.h1`
   margin-bottom: 40px;
   padding-top: 40px;
   @media screen and (min-width: 480px) {
+    font-size: 30px;
   }
   @media screen and (min-width: 768px) {
     font-size: 30px;
@@ -15,7 +16,6 @@ export const Title = styled.h1`
     padding-top: 40px;
   }
   @media screen and (min-width: 1280px) {
-    /* font-size: 30px; */
   }
 `;
 

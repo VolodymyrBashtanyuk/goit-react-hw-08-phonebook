@@ -2,26 +2,54 @@ import styled from 'styled-components';
 
 export const List = styled.ul`
   display: grid;
-  max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  max-width: 100vw;
+  /* max-width: calc(100vw - 48px); */
+  /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
   grid-gap: 16px;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 0;
-  list-style: none;
+  margin-right: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* padding: 0; */
+  /* list-style: none;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+  @media screen and (min-width: 480px) {
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: calc(100vw - 24px); */
+    justify-content: center;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1280px) {
+    /* font-size: 30px; */
+  }
 `;
 
 export const Item = styled.li`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  font-size: 25px;
+  justify-content: flex-start;
+  max-width: 100vw;
+
+  /* justify-content: space-evenly; */
+  font-size: 15px;
   font-weight: bold;
   border: 1px solid #34b8e9;
+  border-radius: 15px;
   background-color: #306178;
   box-shadow: 13px 19px 32px -9px rgba(42, 66, 21, 07);
+  @media screen and (min-width: 480px) {
+    font-size: 25px;
+
+    /* justify-content: space-between; */
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1280px) {
+    /* font-size: 30px; */
+  }
 `;
 
 export const Text = styled.p`
@@ -74,7 +102,18 @@ export const Img = styled.img`
   border: 1px solid black;
   border-radius: 25%;
   object-fit: contain;
+  margin-right: 20px;
+  margin-left: 20px;
   cursor: pointer;
+  @media screen and (min-width: 480px) {
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1280px) {
+    /* font-size: 30px; */
+  }
 `;
 
 export const Container = styled.div`

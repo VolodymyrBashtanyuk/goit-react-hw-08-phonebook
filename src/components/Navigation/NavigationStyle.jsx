@@ -9,6 +9,7 @@ export const Wrapper = styled.header`
 
 export const List = styled.ul`
   display: flex;
+  flex-direction: column;
 `;
 
 export const Nav = styled.nav`
@@ -19,8 +20,11 @@ export const Nav = styled.nav`
 
 export const Item = styled.li`
   font-size: 20px;
+  color: white;
+
   :not(:last-child) {
-    margin-right: 40px;
+    margin-bottom: 20px;
+    /* margin-right: 40px; */
   }
   :hover,
   :focus {
