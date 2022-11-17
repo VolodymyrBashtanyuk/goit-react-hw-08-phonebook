@@ -4,13 +4,20 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const Text = styled.p`
   font-size: 20px;
   margin-bottom: 20px;
   color: white;
-  /* margin-right: 20px; */
+  @media screen and (min-width: 768px) {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
 `;
 
 export const Button = styled.button`

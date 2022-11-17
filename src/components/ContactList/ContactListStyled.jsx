@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
   display: grid;
   max-width: 100vw;
-  /* max-width: calc(100vw - 48px); */
-  /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+
   grid-gap: 16px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -16,14 +15,18 @@ export const List = styled.ul`
   margin-left: auto;
   margin-right: auto; */
   @media screen and (min-width: 480px) {
-    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    max-width: calc(100vw - 24px); */
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    max-width: calc(100vw - 100px);
+    margin-left: auto;
+    margin-right: auto;
   }
   @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    max-width: calc(100vw - 24px);
   }
   @media screen and (min-width: 1280px) {
-    /* font-size: 30px; */
+    max-width: calc(100vw - 48px);
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 `;
 
@@ -32,8 +35,6 @@ export const Item = styled.li`
   align-items: center;
   justify-content: flex-start;
   max-width: 100vw;
-
-  /* justify-content: space-evenly; */
   font-size: 15px;
   font-weight: bold;
   border: 1px solid #34b8e9;
@@ -41,7 +42,7 @@ export const Item = styled.li`
   background-color: #306178;
   box-shadow: 13px 19px 32px -9px rgba(42, 66, 21, 07);
   @media screen and (min-width: 480px) {
-    font-size: 25px;
+    /* font-size: 25px; */
 
     /* justify-content: space-between; */
   }
@@ -53,6 +54,7 @@ export const Item = styled.li`
 `;
 
 export const Text = styled.p`
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 

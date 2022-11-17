@@ -10,6 +10,15 @@ export const Wrapper = styled.header`
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
+  /* @media screen and (min-width: 480px) {
+    font-size: 30px;
+  } */
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+  @media screen and (min-width: 1280px) {
+  }
 `;
 
 export const Nav = styled.nav`
@@ -24,11 +33,16 @@ export const Item = styled.li`
 
   :not(:last-child) {
     margin-bottom: 20px;
-    /* margin-right: 40px; */
   }
   :hover,
   :focus {
     color: #0dede3;
+  }
+  @media screen and (min-width: 768px) {
+    :not(:last-child) {
+      margin-right: 40px;
+      margin-bottom: 0;
+    }
   }
 `;
 
