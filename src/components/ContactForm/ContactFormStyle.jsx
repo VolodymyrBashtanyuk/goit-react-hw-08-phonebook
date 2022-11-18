@@ -6,18 +6,12 @@ export const Form = styled.form`
   max-width: 100vw;
   padding-right: 5px;
   padding-left: 5px;
-  /* margin-right: auto;
-  margin-left: auto; */
+  padding-bottom: 20px;
   @media screen and (min-width: 480px) {
     width: 400px;
-    /* font-size: 30px; */
     border: 1px solid back;
     margin-right: auto;
     margin-left: auto;
-  }
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
   }
 `;
 
@@ -40,10 +34,6 @@ export const Input = styled.input`
     width: 400px;
     padding: 10px;
   }
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const Button = styled.button`
@@ -58,9 +48,6 @@ export const Button = styled.button`
   :hover,
   :focus {
     background-color: #4f94f3;
-  }
-  @media screen and (min-width: 480px) {
-    padding: 15px;
   }
 `;
 

@@ -10,9 +10,6 @@ export const Wrapper = styled.header`
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  /* @media screen and (min-width: 480px) {
-    font-size: 30px;
-  } */
   @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;

@@ -1,7 +1,10 @@
 import PropsType from 'prop-types';
 import { nanoid } from 'nanoid';
-import { Wrapper } from './FilterContactStyle';
-import { Label, Input } from 'components/FilterContact/FilterContactStyle';
+import {
+  Label,
+  Input,
+  Wrapper,
+} from 'components/FilterContact/FilterContactStyle';
 
 const filterId = nanoid(5);
 

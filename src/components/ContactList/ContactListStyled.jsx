@@ -6,23 +6,19 @@ export const List = styled.ul`
 
   grid-gap: 16px;
   margin-top: 10px;
-  margin-bottom: 20px;
   margin-right: 0;
   padding-left: 5px;
   padding-right: 5px;
-  /* padding: 0; */
-  /* list-style: none;
-  margin-left: auto;
-  margin-right: auto; */
+  padding-bottom: 20px;
   @media screen and (min-width: 480px) {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    max-width: calc(100vw - 100px);
+    max-width: calc(100vw - 120px);
     margin-left: auto;
     margin-right: auto;
   }
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    max-width: calc(100vw - 24px);
+    max-width: calc(100vw - 72px);
   }
   @media screen and (min-width: 1280px) {
     max-width: calc(100vw - 48px);
@@ -41,16 +37,6 @@ export const Item = styled.li`
   border-radius: 15px;
   background-color: #306178;
   box-shadow: 13px 19px 32px -9px rgba(42, 66, 21, 07);
-  @media screen and (min-width: 480px) {
-    /* font-size: 25px; */
-
-    /* justify-content: space-between; */
-  }
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-    /* font-size: 30px; */
-  }
 `;
 
 export const Text = styled.p`
@@ -112,9 +98,7 @@ export const Img = styled.img`
     margin-left: 20px;
   }
   @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-    /* font-size: 30px; */
+    font-size: 30px;
   }
 `;
 
